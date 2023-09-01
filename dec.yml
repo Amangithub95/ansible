@@ -1,0 +1,9 @@
+---
+- name: Decrypt Ansible Vault
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Decrypt the Ansible Vault
+      shell: ansible-vault decrypt /test.txt
+      args:
+        executable: /bin/bash
