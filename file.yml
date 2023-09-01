@@ -1,0 +1,14 @@
+---
+- name: Create Files Playbook
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create files
+      file:
+        path: "{{ item }}"
+        state: touch
+      with_items:
+        - /root/Dev.txt
+        - /root/stag.txt
+        - /root/prod.txt
+        - /root/integ.txt
